@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    background-color: lightblue;
+}
+
+button {
+    background-color: rgb(250, 212, 21);
+    color: black;
+    padding: 18px;
+    font-size: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px;
+}
+
+#my-canvas {
+    background-color: grey;
+}
+
+#my-canvas, #gameover-screen {
+    display: none; /* oculta el elemento y todo lo interno */
+}
+
