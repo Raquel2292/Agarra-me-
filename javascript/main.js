@@ -21,3 +21,15 @@ const startGame = () => {
 
 //iniciar el juego
 inicioBtn.addEventListener ("click", startGame); 
+
+//teclas flechas hacia los lados mushu se mueve hacia un lado o el otro
+window.addEventListener("keydown", (event) => {
+    if (event.code === "ArrowRight"){
+        console.log ("mushu hacia la derecha")
+        gameGo.mushuObj.movimientoMushuDcha();
+    }
+    else if (event.code === "ArrowLeft"){
+        console.log ("mushu hacia la izquierda")
+        gameGo.mushuObj.movimientoMushuIzq();
+    }
+})

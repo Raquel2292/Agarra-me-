@@ -5,6 +5,12 @@ class Game {
         this.fondo = new Image();
         this.fondo.src= "./imagenes/fondo-juego.png";
 
+        this.mushuObj = new Mushu();
+        this.appleObj = new Manzana();
+        this.sandiaObj = new Sandia();
+        this.cerezaObj = new Cereza();
+        this.platanoObj = new Platano();
+
         this.frames = 0; //aumenta 60 veces por segundo
         this.isGameOn = true;
 
@@ -29,8 +35,17 @@ class Game {
 
         //3.dibujado de los elementos
         this.drawFondo(); //se tiene que generar sola en bucle.
+        this.mushuObj.drawMushu();
+        this.appleObj.drawManzana();
+        this.sandiaObj.drawSandia();
+        this.cerezaObj.drawCereza();
+        this.platanoObj.drawPlatano();
 
         //2.acciones y movimientos
+        this.appleObj.movimientoApple();
+        this.sandiaObj.movimientoSandia();
+        this.cerezaObj.movimientoCereza();
+        this.platanoObj.movimientoPlatano();
         //4.control de la recursión
         if (this.isGameOn === true){
            requestAnimationFrame(this.gameLoop) 
