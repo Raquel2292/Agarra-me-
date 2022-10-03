@@ -1,8 +1,10 @@
 class Manzana {
     constructor() {
         this.img = new Image()
-        this.img.src = "./imagenes/manzana.png.png"
-        this.x = 140;
+        this.img.src = "./imagenes/manzana.png.png" 
+        let randomName = Math.random() * canvas.width
+        let randomNum = Math.floor(randomName)
+        this.x = randomNum;
         this.y = 50;
         this.w = 50;
         this.h = 50;
@@ -24,7 +26,9 @@ class Sandia {
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/sandia.png"
-        this.x = 300;
+        let randomName = Math.random() * canvas.width
+        let randomNum = Math.floor(randomName)
+        this.x = randomNum;
         this.y = 50;
         this.w = 50;
         this.h = 50;
@@ -46,7 +50,9 @@ class Cereza{
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/cereza.png"
-        this.x = 400;
+        let randomName = Math.random() * canvas.width
+        let randomNum = Math.floor(randomName)
+        this.x = randomNum;
         this.y = 50;
         this.w = 50;
         this.h = 50;
@@ -68,7 +74,9 @@ class Platano{
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/platano.png"
-        this.x = 530;
+        let randomName = Math.random() * canvas.width
+        let randomNum = Math.floor(randomName)
+        this.x = randomNum;
         this.y = 50;
         this.w = 50;
         this.h = 50;
@@ -89,7 +97,9 @@ class Platano{
         constructor() {
             this.img = new Image()
             this.img.src = "./imagenes/pocion.png.png"
-            this.x = 200;
+            let randomName = Math.random() * canvas.width
+            let randomNum = Math.floor(randomName)
+            this.x = randomNum;
             this.y = 50;
             this.w = 50;
             this.h = 50;
