@@ -19,6 +19,7 @@ const startGame = () => {
     gameGo.gameLoop();
 }
 
+
 //iniciar el juego
 inicioBtn.addEventListener ("click", startGame); 
 
@@ -30,6 +31,7 @@ window.addEventListener("keydown", (event) => {
     }
     else if (event.code === "ArrowLeft"){
         console.log ("mushu hacia la izquierda")
+        
         gameGo.mushuObj.movimientoMushuIzq();
     }
 })
