@@ -21,6 +21,8 @@ class Game {
         this.frames = 0; //aumenta 60 veces por segundo
         this.isGameOn = true;
 
+        this.score = 0;
+
         this.width = canvas.width;
         this.height = canvas.height;
     }
@@ -31,8 +33,23 @@ class Game {
         canvas.style.display = "none";
     }
 
+    gameScore = () => {
+        if(this.manzanaArr.length !== 0 || this.manzanaArr[0].x < -50){
+            this.score++
+            console.log("el score es: ", this.score);
+
+            this.manzanaArr.shift()
+        }
+    }
+
     drawFondo = () => {
         ctx.drawImage (this.fondo, 0, 0, this.width, this.height); //tiene que ser drawImage porque es predeterminado
+    }
+
+    drawScore = () => {
+        ctx.font = "20px Arial";
+        let scoreStr = `Score: ${this.score}`
+        ctx.fillText (scoreStr, canvas.width * 0.4 , 50)
     }
 
     repeatManzana = () => {
@@ -77,6 +94,7 @@ class Game {
 
         //3.dibujado de los elementos
         this.drawFondo(); //se tiene que generar sola en bucle.
+        this.drawScore();
         this.mushuObj.drawMushu();
         //this.appleObj.drawManzana();
         this.manzanaArr.forEach ((eachManzana) => {
@@ -122,6 +140,7 @@ class Game {
         this.pocionArr.forEach ((eachPocion) => {
             eachPocion.movimientoPocion()
         })
+
 
         this.repeatManzana();
         this.repeatSandia();
