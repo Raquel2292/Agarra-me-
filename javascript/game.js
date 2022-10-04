@@ -68,7 +68,6 @@ class Game {
             {
                 this.sandiaArr.splice(index,1)
             }
-
         })
     }
 
@@ -81,7 +80,6 @@ class Game {
             {
                 this.cerezaArr.splice(index,1)
             }
-
         })
     }
 
@@ -94,7 +92,6 @@ class Game {
             {
                 this.platanoArr.splice(index,1)
             }
-
         })
     }
 
@@ -108,10 +105,8 @@ class Game {
                 this.pocionArr.splice(index,1)
                 this.gameOver();
             }
-
         })
-    }
-
+    } 
    
     repeatManzana = () => {
         if (this.frames % 180 === 0){

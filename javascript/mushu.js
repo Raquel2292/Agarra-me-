@@ -15,10 +15,14 @@ class Mushu {
     }
 
     movimientoMushuIzq = () => {
+        if (this.x > 0){
         this.x = this.x + -20;
+        }
     }
     movimientoMushuDcha =  () => {
+        if (this.x < 550){
         this.x = this.x + 20;
+        }
     }
    
 }

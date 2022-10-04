@@ -14,7 +14,7 @@ const startGame = () => {
 
     inicioScreen.style.display = "none";
     canvas.style.display = "block"; //si lo pongo en none, de la pantalla de inicio me salta a la de GAMEOVER
-    
+    gameOver.style.display = "none";
 
     gameGo = new Game();
     console.log(gameGo);
@@ -22,11 +22,18 @@ const startGame = () => {
     gameGo.gameLoop();
 }
 
+const inicioJuego = () => {
+    inicioScreen.style.display = "block";
+    canvas.style.display = "none";
+    gameOver.style.display = "none";
+}
+
 
 //iniciar el juego
 inicioBtn.addEventListener ("click", startGame); 
 volverAjugar.addEventListener ("click", startGame);
-//volverAinicio.addEventListener ("click", )
+volverAinicio.addEventListener ("click", inicioJuego);
+
 
 //teclas flechas hacia los lados mushu se mueve hacia un lado o el otro
 window.addEventListener("keydown", (event) => {
