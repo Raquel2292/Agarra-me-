@@ -3,6 +3,9 @@ const canvas = document.querySelector ("#my-canvas");
 const ctx = canvas.getContext ("2d");
 const inicioScreen = document.querySelector ("#pantalla-inicio");
 const inicioBtn = document.querySelector("#boton-inicio");
+const gameOver = document.querySelector("#gameover-screen");
+const volverAjugar = document.querySelector ("#jugar-btn");
+const volverAinicio = document.querySelector ("#inicio-btn");
 
 let gameGo;
 
@@ -22,6 +25,8 @@ const startGame = () => {
 
 //iniciar el juego
 inicioBtn.addEventListener ("click", startGame); 
+volverAjugar.addEventListener ("click", startGame);
+//volverAinicio.addEventListener ("click", )
 
 //teclas flechas hacia los lados mushu se mueve hacia un lado o el otro
 window.addEventListener("keydown", (event) => {
