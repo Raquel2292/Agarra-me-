@@ -22,10 +22,10 @@ class Manzana {
    
 }
 
-class Sandia {
+class Espada {
     constructor() {
         this.img = new Image()
-        this.img.src = "./imagenes/sandia.png"
+        this.img.src = "./imagenes/espada.png"
         let randomName = Math.random() * canvas.width
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
@@ -36,20 +36,20 @@ class Sandia {
         this.moveSandia = 25;
     }
 
-    drawSandia = () => {
+    drawEspada = () => {
         ctx.drawImage (this.img, this.x, this.y, this.w, this.h);
     }
 
-    movimientoSandia = () => {
+    movimientoEspada = () => {
         this.y = this.y + this.speed;
     }
    
 }
 
-class Cereza{
+class Grillo{
     constructor() {
         this.img = new Image()
-        this.img.src = "./imagenes/cereza.png"
+        this.img.src = "./imagenes/grillo.png"
         let randomName = Math.random() * canvas.width
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
@@ -57,23 +57,23 @@ class Cereza{
         this.w = 50;
         this.h = 50;
         this.speed = 5;
-        this.moveCereza = 25;
+        this.moveGrillo = 25;
     }
 
-    drawCereza = () => {
+    drawGrillo = () => {
         ctx.drawImage (this.img, this.x, this.y, this.w, this.h);
     }
 
-    movimientoCereza = () => {
+    movimientoGrillo = () => {
         this.y = this.y + this.speed;
     }
    
 }
 
-class Platano{
+class Mulan{
     constructor() {
         this.img = new Image()
-        this.img.src = "./imagenes/platano.png"
+        this.img.src = "./imagenes/mulan.png"
         let randomName = Math.random() * canvas.width
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
@@ -81,22 +81,22 @@ class Platano{
         this.w = 50;
         this.h = 50;
         this.speed = 3;
-        this.movePlatano = 25;
+        this.moveMulan = 25;
     }
 
-    drawPlatano = () => {
+    drawMulan = () => {
         ctx.drawImage (this.img, this.x, this.y, this.w, this.h);
     }
 
-    movimientoPlatano = () => {
+    movimientoMulan = () => {
         this.y = this.y + this.speed;
     }
 }
 
-    class Pocion{
+    class ShanYu{
         constructor() {
             this.img = new Image()
-            this.img.src = "./imagenes/pocion.png.png"
+            this.img.src = "./imagenes/shan-yu.png"
             let randomName = Math.random() * canvas.width
             let randomNum = Math.floor(randomName)
             this.x = randomNum;
@@ -107,11 +107,11 @@ class Platano{
             this.movePlatano = 25;
         }
     
-        drawPocion = () => {
+        drawShanYu = () => {
             ctx.drawImage (this.img, this.x, this.y, this.w, this.h);
         }
     
-        movimientoPocion = () => {
+        movimientoShanYu= () => {
             this.y = this.y + this.speed;
         }
 

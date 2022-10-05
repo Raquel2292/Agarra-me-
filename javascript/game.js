@@ -3,20 +3,21 @@ class Game {
         //propiedades o elementos del juego
         //fondo
         this.fondo = new Image();
-        this.fondo.src= "./imagenes/fondo-juego.png";
+        this.fondo.src= "./imagenes/fondo-casa.png";
 
         this.manzanaArr = []; //para que caigan mas manzanas
-        this.sandiaArr = []; // para que caigan mas sandias
-        this.cerezaArr = []; //para que caigan mas cerezas
-        this.platanoArr = []; //para que caigan mas platanos
-        this.pocionArr = []; //para que caigan mas pociones
+        this.espadaArr = []; // para que caigan mas espada
+        this.grilloArr = []; //para que caigan mas grillos
+        this.mulanArr = []; //para que caigan mas mulan
+        this.ShanYuArr = []; //para que caigan mas shanyu
+        this.fondos = ["./imagenes/fondo-jardin.png", "./imagenes/fondo-casa.png", "./imagenes/fondo-loto.png"]
 
         this.mushuObj = new Mushu();
         //this.appleObj = new Manzana();
-        //this.sandiaObj = new Sandia();
-        //this.cerezaObj = new Cereza();
-        //this.platanoObj = new Platano();
-        //this.pocionObj = new Pocion ();
+        //this.espadaObj = new Espada();
+        //this.grilloObj = new Grillo();
+        //this.mulanObj = new Mulan();
+        //this.shanyuObj = new shanyu ();
 
         this.frames = 0; //aumenta 60 veces por segundo
         this.isGameOn = true;
@@ -39,7 +40,6 @@ class Game {
         if(this.manzanaArr.length !== 0 || this.manzanaArr[0].x < -50){
             this.score++
             //console.log("el score es: ", this.score);
-
             this.manzanaArr.shift()
         }
     }
@@ -59,50 +59,57 @@ class Game {
         })
     }
 
-    mushuCollisionSandia = () => {
-        this.sandiaArr.forEach ((eachSandia, index) => {
-            if (this.mushuObj.x < eachSandia.x + eachSandia.w &&
-                this.mushuObj.x + this.mushuObj.w > eachSandia.x &&
-                this.mushuObj.y < eachSandia.y + eachSandia.h &&
-                this.mushuObj.h + this.mushuObj.y > eachSandia.y)
+    mushuCollisionEspada = () => {
+        this.espadaArr.forEach ((eachEspada, index) => {
+            if (this.mushuObj.x < eachEspada.x + eachEspada.w &&
+                this.mushuObj.x + this.mushuObj.w > eachEspada.x &&
+                this.mushuObj.y < eachEspada.y + eachEspada.h &&
+                this.mushuObj.h + this.mushuObj.y > eachEspada.y)
             {
-                this.sandiaArr.splice(index,1)
+                this.espadaArr.splice(index,1)
             }
         })
     }
 
-    mushuCollisionCereza = () => {
-        this.cerezaArr.forEach ((eachCereza, index) => {
-            if (this.mushuObj.x < eachCereza.x + eachCereza.w &&
-                this.mushuObj.x + this.mushuObj.w > eachCereza.x &&
-                this.mushuObj.y < eachCereza.y + eachCereza.h &&
-                this.mushuObj.h + this.mushuObj.y > eachCereza.y)
+    mushuCollisionGrillo = () => {
+        this.grilloArr.forEach ((eachGrillo, index) => {
+            if (this.mushuObj.x < eachGrillo.x + eachGrillo.w &&
+                this.mushuObj.x + this.mushuObj.w > eachGrillo.x &&
+                this.mushuObj.y < eachGrillo.y + eachGrillo.h &&
+                this.mushuObj.h + this.mushuObj.y > eachGrillo.y)
             {
-                this.cerezaArr.splice(index,1)
+                this.grilloArr.splice(index,1)
             }
         })
     }
 
-    mushuCollisionPlatano = () => {
-        this.platanoArr.forEach ((eachPlatano, index) => {
-            if (this.mushuObj.x < eachPlatano.x + eachPlatano.w &&
-                this.mushuObj.x + this.mushuObj.w > eachPlatano.x &&
-                this.mushuObj.y < eachPlatano.y + eachPlatano.h &&
-                this.mushuObj.h + this.mushuObj.y > eachPlatano.y)
+    mushuCollisionMulan = () => {
+        this.mulanArr.forEach ((eachMulan, index) => {
+            
+            if (this.mushuObj.x < eachMulan.x + eachMulan.w &&
+                this.mushuObj.x + this.mushuObj.w > eachMulan.x &&
+                this.mushuObj.y < eachMulan.y + eachMulan.h &&
+                this.mushuObj.h + this.mushuObj.y > eachMulan.y)
+               
             {
-                this.platanoArr.splice(index,1)
+                this.mulanArr.splice(index,1)
+                
+                let random = Math.floor(Math.random() * this.fondos.length);
+                console.log(random)
+                this.fondo.src = this.fondos[random];
             }
+            //hacer aqui el cambio de pantalla                
         })
     }
 
-    mushuCollisionPocion = () => {
-        this.pocionArr.forEach ((eachPocion, index) => {
-            if (this.mushuObj.x < eachPocion.x + eachPocion.w &&
-                this.mushuObj.x + this.mushuObj.w > eachPocion.x &&
-                this.mushuObj.y < eachPocion.y + eachPocion.h &&
-                this.mushuObj.h + this.mushuObj.y > eachPocion.y)
+    mushuCollisionShanyu = () => {
+        this.ShanYuArr.forEach ((eachShanYu, index) => {
+            if (this.mushuObj.x < eachShanYu.x + eachShanYu.w &&
+                this.mushuObj.x + this.mushuObj.w > eachShanYu.x &&
+                this.mushuObj.y < eachShanYu.y + eachShanYu.h &&
+                this.mushuObj.h + this.mushuObj.y > eachShanYu.y)
             {
-                this.pocionArr.splice(index,1)
+                this.ShanYuArr.splice(index,1)
                 this.gameOver();
             }
         })
@@ -115,31 +122,31 @@ class Game {
         }   
     }
 
-    repeatSandia = () => {
+    repeatEspada = () => {
         if(this.frames % 180 === 0){
-            let nuevaSandia = new Sandia()
-            this.sandiaArr.push(nuevaSandia)
+            let nuevaEspada = new Espada()
+            this.espadaArr.push(nuevaEspada)
         }
     }
 
-    repeatCereza = () => {
+    repeatGrillo = () => {
         if (this.frames % 180 === 0){
-            let nuevaCereza = new Cereza()
-            this.cerezaArr.push(nuevaCereza)
+            let nuevoGrillo = new Grillo()
+            this.grilloArr.push(nuevoGrillo)
         }
     }
 
-    repeatPlatano = () => {
+    repeatMulan = () => {
         if(this.frames % 180 === 0){
-            let nuevoPlatano = new Platano()
-            this.platanoArr.push(nuevoPlatano)
+            let nuevoMulan = new Mulan()
+            this.mulanArr.push(nuevoMulan)
         }
     }
 
-    repeatPocion = () => {
+    repeatShanYu = () => {
         if(this.frames %180 === 0){
-            let nuevaPocion = new Pocion()
-            this.pocionArr.push(nuevaPocion)
+            let nuevoShanYu = new ShanYu()
+            this.ShanYuArr.push(nuevoShanYu)
         }
     }
 
@@ -186,21 +193,21 @@ class Game {
         })
 
         //this.sandiaObj.drawSandia();
-        this.sandiaArr.forEach ((eachSandia) => {
-            eachSandia.drawSandia()
+        this.espadaArr.forEach ((eachEspada) => {
+            eachEspada.drawEspada()
         })
-        //this.cerezaObj.drawCereza();
-        this.cerezaArr.forEach ((eachCereza) => {
-            eachCereza.drawCereza()
+        //this.grilloObj.drawGrillo();
+        this.grilloArr.forEach ((eachGrillo) => {
+            eachGrillo.drawGrillo()
         })
-        //this.platanoObj.drawPlatano();
-        this.platanoArr.forEach ((eachPlatano) => {
-            eachPlatano.drawPlatano()
+        //this.mulanObj.drawMulan();
+        this.mulanArr.forEach ((eachMulan) => {
+            eachMulan.drawMulan()
         })
 
-        //this.pocionObj.drawPocion();
-        this.pocionArr.forEach ((eachPocion) => {
-            eachPocion.drawPocion()
+        //this.shanYuObj.drawShanYu();
+        this.ShanYuArr.forEach ((eachShanYu) => {
+            eachShanYu.drawShanYu()
         })
 
         //2.acciones y movimientos
@@ -208,35 +215,36 @@ class Game {
             eachManzana.movimientoApple()
         })
         this.gameScore()
-        //this.sandiaObj.movimientoSandia();
-        this.sandiaArr.forEach ((eachSandia) => {
-            eachSandia.movimientoSandia()
+        //this.espadaObj.movimientoEspada();
+        this.espadaArr.forEach ((eachEspada) => {
+            eachEspada.movimientoEspada()
         })
 
-        //this.cerezaObj.movimientoCereza();
-        this.cerezaArr.forEach ((eachCereza) => {
-            eachCereza.movimientoCereza()
+        //this.grilloObj.movimientoGrillo();
+        this.grilloArr.forEach ((eachGrillo) => {
+            eachGrillo.movimientoGrillo()
         })
-        //this.platanoObj.movimientoPlatano();
-        this.platanoArr.forEach ((eachPlatano) => {
-            eachPlatano.movimientoPlatano()
+        //this.mulanObj.movimientoMulan();
+        this.mulanArr.forEach ((eachMulan) => {
+            eachMulan.movimientoMulan()
         })
-        //this.pocionObj.movimientoPocion();
-        this.pocionArr.forEach ((eachPocion) => {
-            eachPocion.movimientoPocion()
+        //this.shanYuObj.movimientoShanYu();
+        this.ShanYuArr.forEach ((eachShanYu) => {
+            eachShanYu.movimientoShanYu();
         })
 
         //invocacion funciones
         this.repeatManzana();
-        this.repeatSandia();
-        this.repeatCereza();
-        this.repeatPlatano();
-        this.repeatPocion();
+        this.repeatEspada();
+        this.repeatGrillo();
+        this.repeatMulan();
+        this.repeatShanYu();
         this.mushuCollisionManzana();
-        this.mushuCollisionSandia();
-        this.mushuCollisionCereza();
-        this.mushuCollisionPlatano();
-        this.mushuCollisionPocion();
+        this.mushuCollisionEspada();
+        this.mushuCollisionGrillo();
+        this.mushuCollisionMulan();
+        this.mushuCollisionShanyu();
+
        //this.gameScore();
         
 
