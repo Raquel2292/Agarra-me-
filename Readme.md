@@ -1,17 +1,17 @@
-HARVEST TIME
+¡Agarra(me)!
 
 #Description
 
-Havest time es un juego en el que el jugador tiene que mover al muñeco de lado a lado e intentar coger todas las fruta posibles. Cada fruta tiene una puntuación, pero habrá alguna fruta específica que tendrá mas puntuación; habrá objetos que no serán frutas que caerán y te matarán si lo coges. 
-El juego termina cuando coges algún objeto que no es una fruta.
+Agarra(me) es un juego en el que el jugador tiene que mover al muñeco de lado a lado e intentar coger todas las los objetos que caen posibles. Cada objeto tiene una puntuación, si coges a Shan Yu moriras y te llevará a la pantalla de gameover, donde podrás volver a jugar o ir al inicio del juego.
+El juego termina cuando chocas con Shan Yu.
 Al finalizar el juego, te dirá tu record para que puedas ir superándolo poco a poco.
 
 #MVP (DOM-CANVAS)
 
 -el juego tiene un personaje
--de la parte superior caerán frutas y diferentes objetos
--la fruta/objetos te caen de forma aleatoria desde la parte superior de la pantalla
--finaliza el juego cuando cooges lo que no debes
+-de la parte superior caerán objetos.
+-los objetos te caen de forma aleatoria desde la parte superior de la pantalla
+-finaliza el juego cuando colisionas con Shan Yu.
 
 #BACKLOG
 

@@ -11,8 +11,8 @@ class Game {
         this.mulanArr = []; //para que caigan mas mulan
         this.ShanYuArr = []; //para que caigan mas shanyu
         this.fondos = ["./imagenes/fondo-jardin.png", "./imagenes/fondo-casa.png", "./imagenes/fondo-loto.png", "./imagenes/perro-mulan.png"]
-        this.fondogrillo = ["./imagenes/grillo.png", "./imagenes/grillo-mushu.png", "./imagenes/caricias-grillo.png"];
-        this.fondomulan = ["./imagenes/mulan-entrenamiento.png", "./imagenes/mulan-guerrero.png"];
+        this.fondoGrillo = ["./imagenes/grillo.png", "./imagenes/grillo-mushu.png", "./imagenes/caricias-grillo.png"];
+        this.fondoEspada = ["./imagenes/mulan-entrenamiento.png", "./imagenes/mulan-guerrero.png"];
 
         this.mushuObj = new Mushu();
         //this.appleObj = new Manzana();
@@ -69,9 +69,13 @@ class Game {
                 this.mushuObj.h + this.mushuObj.y > eachEspada.y)
             {
                 this.espadaArr.splice(index,1)
+                this.score += 5;
 
-                let random = Math.floor(Math.random() * this.fondomulan.length);
-                this.fondo.src = this.fondomulan[random];
+                let random = Math.floor(Math.random() * this.fondoEspada.length);
+                this.fondo.src = this.fondoEspada[random];
+
+                this.mushuObj.w = 70;
+                this.mushuObj.h = 70;
             }
         })
     }
@@ -84,9 +88,13 @@ class Game {
                 this.mushuObj.h + this.mushuObj.y > eachGrillo.y)
             {
                 this.grilloArr.splice(index,1)
+                this.score += 10;
                
-                let random = Math.floor(Math.random() * this.fondogrillo.length);
-                this.fondo.src = this.fondogrillo[random];
+                let random = Math.floor(Math.random() * this.fondoGrillo.length);
+                this.fondo.src = this.fondoGrillo[random];
+
+                this.mushuObj.w = 50;
+                this.mushuObj.h = 50;
             }
         })
     }
@@ -101,6 +109,7 @@ class Game {
                
             {
                 this.mulanArr.splice(index,1)
+                this.score += 15;
                 
                 let random = Math.floor(Math.random() * this.fondos.length);
                 console.log(random)
