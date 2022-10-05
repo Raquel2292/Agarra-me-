@@ -10,7 +10,9 @@ class Game {
         this.grilloArr = []; //para que caigan mas grillos
         this.mulanArr = []; //para que caigan mas mulan
         this.ShanYuArr = []; //para que caigan mas shanyu
-        this.fondos = ["./imagenes/fondo-jardin.png", "./imagenes/fondo-casa.png", "./imagenes/fondo-loto.png"]
+        this.fondos = ["./imagenes/fondo-jardin.png", "./imagenes/fondo-casa.png", "./imagenes/fondo-loto.png", "./imagenes/perro-mulan.png"]
+        this.fondogrillo = ["./imagenes/grillo.png", "./imagenes/grillo-mushu.png", "./imagenes/caricias-grillo.png"];
+        this.fondomulan = ["./imagenes/mulan-entrenamiento.png", "./imagenes/mulan-guerrero.png"];
 
         this.mushuObj = new Mushu();
         //this.appleObj = new Manzana();
@@ -67,6 +69,9 @@ class Game {
                 this.mushuObj.h + this.mushuObj.y > eachEspada.y)
             {
                 this.espadaArr.splice(index,1)
+
+                let random = Math.floor(Math.random() * this.fondomulan.length);
+                this.fondo.src = this.fondomulan[random];
             }
         })
     }
@@ -79,6 +84,9 @@ class Game {
                 this.mushuObj.h + this.mushuObj.y > eachGrillo.y)
             {
                 this.grilloArr.splice(index,1)
+               
+                let random = Math.floor(Math.random() * this.fondogrillo.length);
+                this.fondo.src = this.fondogrillo[random];
             }
         })
     }
