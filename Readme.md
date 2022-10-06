@@ -8,7 +8,7 @@ Al finalizar el juego, te dirá tu record para que puedas ir superándolo poco a
 
 #MVP (DOM-CANVAS)
 
--el juego tiene un personaje
+-el juego tiene un personaje ("Mushu")
 -de la parte superior caerán objetos.
 -los objetos te caen de forma aleatoria desde la parte superior de la pantalla
 -finaliza el juego cuando colisionas con Shan Yu.
@@ -16,11 +16,12 @@ Al finalizar el juego, te dirá tu record para que puedas ir superándolo poco a
 #BACKLOG
 
 -añadir un marcador
--posibilidad de subir de niveles
+
 
 #DATA STRUCTURE
 
 #main.js
+
 
 #game.js
 

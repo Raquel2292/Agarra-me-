@@ -10,9 +10,8 @@ class Game {
         this.grilloArr = []; //para que caigan mas grillos
         this.mulanArr = []; //para que caigan mas mulan
         this.ShanYuArr = []; //para que caigan mas shanyu
-        this.fondos = ["./imagenes/fondo-jardin.png", "./imagenes/fondo-casa.png", "./imagenes/fondo-loto.png", "./imagenes/perro-mulan.png"]
-        this.fondoGrillo = ["./imagenes/grillo.png", "./imagenes/grillo-mushu.png", "./imagenes/caricias-grillo.png"];
-        this.fondoEspada = ["./imagenes/mulan-entrenamiento.png", "./imagenes/mulan-guerrero.png"];
+        this.fondos = ["./imagenes/fondo-jardin.png", "./imagenes/fondo-casa.png", "./imagenes/fondo-loto.png"]
+        this.fondoGrillo = ["./imagenes/grillo-mushu.png"];
 
         this.mushuObj = new Mushu();
         //this.appleObj = new Manzana();
@@ -44,6 +43,10 @@ class Game {
         }
     }
 
+    lookScore = () => {
+        //hacer que el score guarde la información del juego y lo muestre en la pantalla de gameover
+    }
+
     mushuCollisionManzana = () => {
         //console.log(this.manzanaArr.length)
         this.manzanaArr.forEach ((eachManzana, index) => {
@@ -69,9 +72,6 @@ class Game {
                 this.espadaArr.splice(index,1)
                 this.score += 5;
 
-                let random = Math.floor(Math.random() * this.fondoEspada.length);
-                this.fondo.src = this.fondoEspada[random];
-
                 this.mushuObj.w = 100;
                 this.mushuObj.h = 100;
             }
@@ -91,8 +91,8 @@ class Game {
                 let random = Math.floor(Math.random() * this.fondoGrillo.length);
                 this.fondo.src = this.fondoGrillo[random];
 
-                this.mushuObj.w = 50;
-                this.mushuObj.h = 50;
+                this.mushuObj.w = 70;
+                this.mushuObj.h = 70;
             }
         })
     }
@@ -170,11 +170,14 @@ class Game {
         //ocultar el canvas
         canvas.style.display = "none";
         //mostrar la pantalla gameover
-        gameOver.style.display = "block";
+        gameOver.style.display = "flex";
         //this.gameOver(audio.pause);
         audioGo.pause();
         //suena cuando se acaba el juego;
         audioReset.play();
+        //marcador score pantalla gameover
+        const scoreSpan = document.querySelector("#score");
+        scoreSpan.innerHTML = this.score;
     }
 
     gameScore = () => {

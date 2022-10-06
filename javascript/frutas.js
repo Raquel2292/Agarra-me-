@@ -2,12 +2,12 @@ class Manzana {
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/manzana.png" 
-        let randomName = Math.random() * 550
+        let randomName = Math.random() * 850
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
         this.y = 50;
-        this.w = 50;
-        this.h = 50;
+        this.w = 60;
+        this.h = 60;
         this.speed = 4;
         this.moveManzana = 25;
     }
@@ -26,7 +26,7 @@ class Espada {
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/espada.png"
-        let randomName = Math.random() * 550
+        let randomName = Math.random() * 850
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
         this.y = 50;
@@ -50,7 +50,7 @@ class Grillo{
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/grillo.png"
-        let randomName = Math.random() * 550
+        let randomName = Math.random() * 850
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
         this.y = 50;
@@ -74,12 +74,12 @@ class Mulan{
     constructor() {
         this.img = new Image()
         this.img.src = "./imagenes/mulan.png"
-        let randomName = Math.random() * 550
+        let randomName = Math.random() * 850
         let randomNum = Math.floor(randomName)
         this.x = randomNum;
         this.y = 50;
-        this.w = 60;
-        this.h = 60;
+        this.w = 70;
+        this.h = 70;
         this.speed = 3;
         this.moveMulan = 25;
     }
@@ -97,12 +97,12 @@ class Mulan{
         constructor() {
             this.img = new Image()
             this.img.src = "./imagenes/shanyu.png"
-            let randomName = Math.random() * 550
+            let randomName = Math.random() * 850
             let randomNum = Math.floor(randomName)
             this.x = randomNum;
             this.y = 50;
-            this.w = 90;
-            this.h = 90;
+            this.w = 60;
+            this.h = 60;
             this.speed = 7;
             this.movePlatano = 25;
         }

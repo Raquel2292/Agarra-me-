@@ -9,9 +9,9 @@ const volverAinicio = document.querySelector ("#inicio-btn");
 
 let gameGo;
 let audioGo = new Audio();
-audioGo.src="../musica/Hombres de acción.mp3" 
+audioGo.src="./musica/hombresDeAccion.mp3" 
 let audioReset = new Audio();
-audioReset.src="../musica/mushu.mp3"
+audioReset.src="./musica/mushu.mp3"
 
 const startGame = () => {
 
@@ -30,7 +30,7 @@ const startGame = () => {
 
 
 const inicioJuego = () => {
-    inicioScreen.style.display = "block";
+    inicioScreen.style.display = "flex";
     canvas.style.display = "none";
     gameOver.style.display = "none";
 }

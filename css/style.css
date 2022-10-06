@@ -1,31 +1,66 @@
+html {
+    height: 100%;
+}
+
 body{
     margin: 0;
-    background-color: lightblue;
+    background-image: url("../imagenes/fondo-estrellas.jpg");
+    background-size: cover;
+    
 }
 
 button {
     background-color: rgb(250, 212, 21);
     color: black;
-    padding: 18px;
-    font-size: 20px;
-    margin-top: 25px;
+    padding: 10px 50px;
+    font-size: 15px;
+    font-family: cursive;
+    margin-top: 18px;
     border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px rgb(163, 163, 0);
+    cursor: pointer;
 }
+
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 60px;
+    margin: 20px;
 }
 
 #my-canvas {
-    background-color: grey;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px white;
 }
 
 #my-canvas, #gameover-screen {
     display: none; /* oculta el elemento y todo lo interno */
 }
 
+#gameover-screen img {
+    border-radius: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 20px white;
+}
+
+h1 {
+    color: #01011d;
+    font-weight: bolder;
+    font-family: cursive;
+    font-size: 25px;
+    box-shadow: 0px 0px 100px white;
+    border-radius: 50%;
+    padding: 40px;
+    background: white;
+}
+
+h2 {
+    color: #fad415;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 35px;
+}
 

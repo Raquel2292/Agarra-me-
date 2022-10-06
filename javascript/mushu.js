@@ -3,7 +3,7 @@ class Mushu {
         this.img = new Image()
         this.img.src = "./imagenes/mushu.png"
         this.x = 300;
-        this.y = 700;
+        this.y = 450;
         this.w = 70;
         this.h = 70;
         this.speed = 2;
@@ -20,7 +20,7 @@ class Mushu {
         }
     }
     movimientoMushuDcha =  () => {
-        if (this.x < 550){
+        if (this.x < 830){
         this.x = this.x + 20;
         }
     }
