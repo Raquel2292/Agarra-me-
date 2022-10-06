@@ -26,12 +26,10 @@ class Game {
 
         this.score = 0;
 
-        //musica aquí
-
         this.width = canvas.width;
         this.height = canvas.height;
     }
-
+    
     gameOver = () => {
         //detiene el juego
         this.isGameOn = false;
@@ -74,8 +72,8 @@ class Game {
                 let random = Math.floor(Math.random() * this.fondoEspada.length);
                 this.fondo.src = this.fondoEspada[random];
 
-                this.mushuObj.w = 70;
-                this.mushuObj.h = 70;
+                this.mushuObj.w = 100;
+                this.mushuObj.h = 100;
             }
         })
     }
@@ -114,8 +112,7 @@ class Game {
                 let random = Math.floor(Math.random() * this.fondos.length);
                 console.log(random)
                 this.fondo.src = this.fondos[random];
-            }
-            //hacer aqui el cambio de pantalla                
+            }                
         })
     }
 
@@ -174,6 +171,10 @@ class Game {
         canvas.style.display = "none";
         //mostrar la pantalla gameover
         gameOver.style.display = "block";
+        //this.gameOver(audio.pause);
+        audioGo.pause();
+        //suena cuando se acaba el juego;
+        audioReset.play();
     }
 
     gameScore = () => {

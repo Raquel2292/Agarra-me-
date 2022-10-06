@@ -8,8 +8,13 @@ const volverAjugar = document.querySelector ("#jugar-btn");
 const volverAinicio = document.querySelector ("#inicio-btn");
 
 let gameGo;
+let audioGo = new Audio();
+audioGo.src="../musica/Hombres de acción.mp3" 
+let audioReset = new Audio();
+audioReset.src="../musica/mushu.mp3"
 
 const startGame = () => {
+
     console.log("iniciando el juego");
 
     inicioScreen.style.display = "none";
@@ -18,9 +23,11 @@ const startGame = () => {
 
     gameGo = new Game();
     console.log(gameGo);
+    audioGo.play();
 
     gameGo.gameLoop();
 }
+
 
 const inicioJuego = () => {
     inicioScreen.style.display = "block";

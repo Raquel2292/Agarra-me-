@@ -4,8 +4,8 @@ class Mushu {
         this.img.src = "./imagenes/mushu.png"
         this.x = 300;
         this.y = 700;
-        this.w = 50;
-        this.h = 50;
+        this.w = 70;
+        this.h = 70;
         this.speed = 2;
         this.moveMushu = 25;
     }
